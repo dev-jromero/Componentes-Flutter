@@ -7,9 +7,11 @@ A new Flutter project.
 2. <strong>sdk de flutter</strong> <br/>
   <a href="https://flutter.dev/docs/get-started/install">Flutter </a>
 3. From the terminal: Run <br/>
-  <pre> $ flutter pub get </pre>
+  <pre> $ flutter pub get </pre> 
   <strong>OR</strong> <br/>
-4. From Android Studio/IntelliJ: Click Packages get in the action ribbon at the top of pubspec.yaml.
+4. From Android Studio/IntelliJ: Click Packages get in the action ribbon at the top of pubspec.yaml.<br/>
+
+<strong>to install dependencies</strong>
   
 
 ## Getting Started
