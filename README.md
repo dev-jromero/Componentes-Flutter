@@ -5,7 +5,7 @@ A new Flutter project.
 1. <strong>git</strong> <br/>
   <a href="https://git-scm.com/">Git</a>
 2. <strong>sdk de flutter</strong> <br/>
-  <a href="https://flutter.dev/docs/get-started/install">Flutter </>
+  <a href="https://flutter.dev/docs/get-started/install">Flutter </a>
 3. From the terminal: Run <br/>
   <pre> $ flutter pub get </pre>
   <strong>OR</strong> <br/>
