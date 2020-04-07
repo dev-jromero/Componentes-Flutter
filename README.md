@@ -2,12 +2,15 @@
 
 A new Flutter project.
 # installation requirement
-1. git
+1. <strong>git</strong> <br/>
   <a href="https://git-scm.com/">Git</a>
-2. sdk de flutter
-
-3. 
-
+2. <strong>sdk de flutter</strong> <br/>
+  <a href="https://flutter.dev/docs/get-started/install">Flutter 
+3. From the terminal: Run <br/>
+  <pre> $ flutter pub get </pre>
+  <strong>OR</strong> <br/>
+4. From Android Studio/IntelliJ: Click Packages get in the action ribbon at the top of pubspec.yaml.
+  
 
 ## Getting Started
 
