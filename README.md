@@ -1,6 +1,13 @@
 # componentes
 
 A new Flutter project.
+# installation requirement
+1. git
+  <a href="https://git-scm.com/">Git</a>
+2. sdk de flutter
+
+3. 
+
 
 ## Getting Started
 
