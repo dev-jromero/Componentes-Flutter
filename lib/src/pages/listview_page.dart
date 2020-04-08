@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
@@ -6,9 +8,11 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
+  
   ScrollController _scrollController = new ScrollController();
   List<int> _listaNumeros = new List();
   int _ultimoItem = 0;
+  bool _isloading = false;
 
   @override
   void initState() {
@@ -19,17 +23,32 @@ class _ListPageState extends State<ListPage> {
       _scrollController.addListener((){
 
         if( _scrollController.position.pixels == _scrollController.position.maxScrollExtent ){
-          _agregar10();
+          //_agregar10();
+          fetchData();
         }
       });
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Listas'),
       ),
-      body: _crearLista(),
+      body: Stack(
+        children: <Widget>[
+          _crearLista(),
+          _crearloading(),
+        ],
+      )
+
+      
     );
   }
 
@@ -58,5 +77,49 @@ class _ListPageState extends State<ListPage> {
     setState(() {
       
     });
+  }
+
+  Future fetchData() async{
+
+    _isloading = true;
+    setState(() {});
+
+    final duration = new Duration(seconds: 2);
+    return new Timer(duration, respuestaHTTP );
+  }
+
+  void respuestaHTTP(){
+    _isloading = false;
+
+    _scrollController.animateTo(
+      _scrollController.position.pixels + 100,
+      curve: Curves.fastOutSlowIn,
+      duration: Duration(milliseconds: 250)
+    );
+
+    _agregar10();
+  }
+
+  Widget _crearloading() {
+    if ( _isloading ) {
+      return Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CircularProgressIndicator()
+            ],
+          ),
+          SizedBox(height: 15.0),
+        ],
+      );
+      
+      
+    }
+    else {
+      return Container();
+    }
   }
 }
